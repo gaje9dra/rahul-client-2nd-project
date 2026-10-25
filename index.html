@@ -252,7 +252,7 @@
     }
 \n
   
-    .floating-contact{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:9999;display:flex;flex-direction:column;gap:12px}
+    .floating-contact{position:fixed;top:16px;right:16px;transform:none;z-index:9999;display:flex;flex-direction:column;gap:12px}
     .floating-contact a{position:relative;display:grid;place-items:center;width:54px;height:54px;min-width:54px;min-height:54px;padding:0;border:2px solid #ffffffd9;border-radius:50%;color:#fff;text-decoration:none;box-shadow:0 7px 22px #40202b35;transition:transform .2s,box-shadow .2s;width:54px}
     .floating-contact a:hover{transform:scale(1.08);box-shadow:0 11px 28px #40202b45}
     .floating-contact a:focus-visible{outline:3px solid #6b2447;outline-offset:4px}
@@ -262,7 +262,7 @@
     .floating-contact .contact-label{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);padding:5px 9px;border-radius:7px;background:#352530;color:#fff;font-size:.75rem;font-weight:700;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s}
     .floating-contact a:hover .contact-label,.floating-contact a:focus-visible .contact-label{opacity:1}
     @media(max-width:650px){
-      .floating-contact{right:12px;top:50%;gap:10px}
+      .floating-contact{right:12px;top:12px;gap:10px}
       .floating-contact a{width:50px;height:50px;min-width:50px;min-height:50px}
       .floating-contact svg{width:23px;height:23px;flex-basis:23px}
     }
