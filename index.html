@@ -252,18 +252,21 @@
     }
 \n
   
-    .floating-contact{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:9999;display:flex;flex-direction:column;gap:10px}
-    .floating-contact a{display:flex;align-items:center;justify-content:center;gap:9px;min-height:50px;min-width:142px;padding:12px 17px;border-radius:999px;color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;box-shadow:0 8px 24px #40202b30;transition:transform .2s,box-shadow .2s}
-    .floating-contact a:hover{transform:translateY(-2px);box-shadow:0 12px 28px #40202b38}
-    .floating-contact a:focus-visible{outline:3px solid #6b2447;outline-offset:3px}
+    .floating-contact{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:9999;display:flex;flex-direction:column;gap:12px}
+    .floating-contact a{position:relative;display:grid;place-items:center;width:54px;height:54px;min-width:54px;min-height:54px;padding:0;border:2px solid #ffffffd9;border-radius:50%;color:#fff;text-decoration:none;box-shadow:0 7px 22px #40202b35;transition:transform .2s,box-shadow .2s;width:54px}
+    .floating-contact a:hover{transform:scale(1.08);box-shadow:0 11px 28px #40202b45}
+    .floating-contact a:focus-visible{outline:3px solid #6b2447;outline-offset:4px}
     .floating-contact .float-wa{background:#168b57}
     .floating-contact .float-call{background:linear-gradient(135deg,#d94f86,#b72f6b)}
-    .floating-contact svg{width:20px;height:20px;flex:0 0 20px}
+    .floating-contact svg{width:25px;height:25px;flex:0 0 25px}
+    .floating-contact .contact-label{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);padding:5px 9px;border-radius:7px;background:#352530;color:#fff;font-size:.75rem;font-weight:700;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s}
+    .floating-contact a:hover .contact-label,.floating-contact a:focus-visible .contact-label{opacity:1}
     @media(max-width:650px){
-      .floating-contact{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));flex-direction:row;gap:10px}
-      .floating-contact a{flex:1;min-width:0;min-height:50px;padding:12px 10px;font-size:.88rem}
+      .floating-contact{right:12px;top:50%;gap:10px}
+      .floating-contact a{width:50px;height:50px;min-width:50px;min-height:50px}
+      .floating-contact svg{width:23px;height:23px;flex-basis:23px}
     }
-    @media(max-width:360px){.floating-contact{left:8px;right:8px;gap:7px}.floating-contact a{font-size:.8rem;padding:10px 7px}}
+    @media(max-width:360px){.floating-contact{right:8px;gap:8px}.floating-contact a{width:46px;height:46px;min-width:46px;min-height:46px}.floating-contact svg{width:21px;height:21px;flex-basis:21px}}
 
   
     /* Profile-card layout hardening: consistent cards across desktop, tablet, and mobile. */
@@ -682,11 +685,11 @@
   <div class="floating-contact" aria-label="Quick contact options">
     <a class="float-wa" href="https://wa.me/910000000001?text=Hi%2C%20I%20found%20BlushLine%20and%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" aria-label="Contact BlushLine on WhatsApp">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg>
-      WhatsApp
+      <span class="contact-label">WhatsApp</span>
     </a>
     <a class="float-call" href="tel:+910000000001" aria-label="Call BlushLine">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.79a2 2 0 0 1-.45 2.11L8.06 8.94a16 16 0 0 0 6 6l1.32-1.27a2 2 0 0 1 2.11-.45c.89.34 1.83.58 2.79.7A2 2 0 0 1 22 16.92Z"/></svg>
-      Call
+      <span class="contact-label">Call</span>
     </a>
   </div>
 
