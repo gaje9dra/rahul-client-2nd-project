@@ -114,6 +114,17 @@
     footer p,footer a{color:#d6c2cd;font-size:.88rem}footer h3{font-size:.93rem;margin-bottom:12px;color:#fff}footer .footer-links{display:grid;gap:8px}
     .copyright{max-width:1200px;margin:26px auto 0;border-top:1px solid #604957;padding-top:18px;color:#bfaab7;font-size:.8rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     .disclaimer{color:#a8909f;font-size:.77rem;margin-top:12px;max-width:520px}
+
+    .keyword-section{background:linear-gradient(180deg,#fff8fb 0%,#fff0f6 100%);border-top:1px solid #f5dce7;border-bottom:1px solid #f5dce7}
+    .keyword-inner{max-width:1200px;margin:auto;padding:66px 24px 72px;text-align:center}
+    .keyword-heading{font:700 clamp(1.55rem,3vw,2.2rem)/1.25 "Playfair Display",serif;color:var(--pink-dark);margin:0 auto 12px;letter-spacing:-.025em}
+    .keyword-intro{max-width:720px;margin:0 auto 28px;color:var(--muted);font-size:.96rem}
+    .keyword-tags{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px}
+    .keyword-tag{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid #f1cada;border-radius:999px;background:linear-gradient(135deg,#fff,#ffe8f1);color:#a92e61;font-size:.83rem;font-weight:700;box-shadow:0 5px 14px #bd2d680d;transition:transform .2s,box-shadow .2s,border-color .2s}
+    .keyword-tag:before{content:"♡";font-size:1rem;color:var(--pink)}
+    .keyword-tag:hover{transform:translateY(-2px);border-color:#e99cbb;box-shadow:0 9px 20px #bd2d6817;background:#fff}
+    .keyword-tag:focus-visible{outline:3px solid #9c3670;outline-offset:3px}
+    .keyword-note{font-size:.78rem;color:#967c8a;margin:22px auto 0;max-width:760px}
     @media(max-width:900px){.hero-inner{grid-template-columns:1fr .8fr;gap:20px}.hero-image{height:320px}.profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-wrap{height:270px}.nav-links{gap:15px}.about-grid{gap:30px}}
     @media(max-width:650px){.nav-inner{padding:13px 18px;gap:12px}.menu-toggle{display:block;margin-left:auto}.nav-cta{display:none}.nav-links{display:none;position:absolute;left:12px;right:12px;top:calc(100% + 6px);padding:16px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 8px}.hero{padding:49px 18px 42px}.hero-inner{grid-template-columns:1fr}.hero-copy{font-size:1rem}.hero-art{min-height:275px;margin-top:12px}.hero-image{height:290px;width:min(90%,360px)}.note-one{left:0;top:16px}.note-two{right:0;bottom:18px}.trust-inner{padding:16px 10px;gap:9px}.trust-item{font-size:.75rem}.trust-item strong{font-size:.86rem}.section{padding:55px 18px}.section-head{align-items:stretch;flex-direction:column}.search-wrap{width:100%}.profile-grid{grid-template-columns:1fr;gap:18px}.photo-wrap{height:310px}.profile-body{padding:18px}.steps{grid-template-columns:1fr}.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{grid-template-columns:1fr}.about-image{height:280px}.bottom-cta{margin:0 18px 48px;padding:34px 20px}.footer-inner{grid-template-columns:1fr 1fr;gap:25px}.footer-inner>div:first-child{grid-column:1/-1}}
     @media(max-width:430px){.why-grid{grid-template-columns:1fr}}\n    @media(max-width:380px){.hero-actions{flex-direction:column;align-items:stretch}.hero-actions a{text-align:center}.photo-wrap{height:270px}.footer-inner{grid-template-columns:1fr}.footer-inner>div:first-child{grid-column:auto}}
@@ -127,7 +138,7 @@
       <a class="brand" href="#home" aria-label="BlushLine home">blush<span>line</span> ♡</a>
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
       <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#about">About</a><a href="#date-ideas">Date ideas</a><a href="#why-choose-us">Why choose us</a><a href="#faq">FAQ</a>
+        <a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#about">About</a><a href="#date-ideas">Date ideas</a><a href="#why-choose-us">Why choose us</a><a href="#popular-searches">Popular searches</a><a href="#faq">FAQ</a>
       </div>
       <a class="nav-cta" href="#profiles">Explore profiles ↗</a>
     </nav>
@@ -286,6 +297,38 @@
       </div>
     </section>
 
+
+    <section class="keyword-section" id="popular-searches" aria-labelledby="keyword-heading">
+      <div class="keyword-inner">
+        <div class="section-kicker">Find your kind of connection</div>
+        <h2 class="keyword-heading" id="keyword-heading">Popular Jaipur Dating &amp; Date-Idea Searches</h2>
+        <p class="keyword-intro">Explore interests, neighbourhoods, and date ideas. Choose a tag to search the sample profiles or jump to ideas for meeting up.</p>
+        <div class="keyword-tags" aria-label="Popular dating and date idea keywords">
+          <a class="keyword-tag" href="#profiles" data-keyword="music">Music lovers in Jaipur</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="travel">Travel &amp; adventure</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="wellness">Wellness &amp; mindful dates</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="fun">Fun and laughter</a>
+          <a class="keyword-tag" href="#date-ideas">Café date ideas</a>
+          <a class="keyword-tag" href="#date-ideas">Coffee dates in Jaipur</a>
+          <a class="keyword-tag" href="#date-ideas">Dinner and dessert dates</a>
+          <a class="keyword-tag" href="#date-ideas">Bookshop meetups</a>
+          <a class="keyword-tag" href="#date-ideas">Art and creative activities</a>
+          <a class="keyword-tag" href="#date-ideas">Outdoor daytime dates</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="C-Scheme">C-Scheme connections</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="Vaishali Nagar">Vaishali Nagar connections</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="Malviya Nagar">Malviya Nagar connections</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="Mansarovar">Mansarovar connections</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="Raja Park">Raja Park connections</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="Civil Lines">Civil Lines connections</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="Jhotwara">Jhotwara connections</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="food">Foodie conversations</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="films">Movies and pop culture</a>
+          <a class="keyword-tag" href="#profiles" data-keyword="nature">Nature and garden walks</a>
+        </div>
+        <p class="keyword-note">These are navigation shortcuts for this demo—not claims of live member availability or verified profiles.</p>
+      </div>
+    </section>
+
     <section class="bottom-cta">
       <h2>Meet someone new. Make a memory.</h2>
       <p>Find someone who shares your vibe, start a conversation, and plan a first date that feels natural to both of you.</p>
@@ -296,7 +339,7 @@
   <footer>
     <div class="footer-inner">
       <div><div class="footer-brand">blush<span>line</span> ♡</div><p>A pink-themed dating directory concept for adults who want to meet, connect, and enjoy real-life dates together.</p><div class="disclaimer">Demo only. Names, photos, bios, and numbers are placeholders. Meet in public for first dates, respect consent, and verify details before publishing.</div></div>
-      <div><h3>Explore</h3><div class="footer-links"><a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#date-ideas">Date ideas</a><a href="#about">About us</a><a href="#why-choose-us">Why choose us</a></div></div>
+      <div><h3>Explore</h3><div class="footer-links"><a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#date-ideas">Date ideas</a><a href="#about">About us</a><a href="#why-choose-us">Why choose us</a><a href="#popular-searches">Popular searches</a></div></div>
       <div><h3>Helpful</h3><div class="footer-links"><a href="#faq">Dating FAQs</a><a href="#about">Privacy & respect</a><a href="#profiles">Contact options</a></div></div>
     </div>
     <div class="copyright"><span>© <span id="year"></span> BlushLine. Demo concept.</span><span>Made with ♡ and a little blush.</span></div>
