@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff1f6">
+  <meta name="description" content="Browse our friendly call desk profiles and choose how you'd like to connect.">
+  <title>BlushLine — Friendly Connections</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--pink:#e95088;--pink-dark:#bd2d68;--ink:#32242d;--muted:#7b6a74;--blush:#fff1f6;--line:#f3dce6;--white:#fff;--shadow:0 14px 40px #9d476014}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fffafb;color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .top-strip{background:#392631;color:#fff;text-align:center;padding:9px 16px;font-size:.82rem;letter-spacing:.03em}
+    .navbar{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav-inner{max-width:1200px;margin:auto;padding:16px 24px;display:flex;align-items:center;gap:26px}
+    .brand{font-size:1.45rem;font-weight:700;letter-spacing:-.06em;white-space:nowrap}
+    .brand span{color:var(--pink)}
+    .nav-links{display:flex;gap:25px;align-items:center;margin-left:auto;color:#6a5360;font-size:.94rem}
+    .nav-links a:hover{color:var(--pink-dark)}
+    .nav-cta,.btn-primary{background:var(--pink);color:white;padding:11px 18px;border-radius:999px;font-weight:700;border:0;box-shadow:0 8px 18px #e9508829;transition:.2s}
+    .nav-cta:hover,.btn-primary:hover{background:var(--pink-dark);transform:translateY(-1px)}
+    .menu-toggle{display:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;color:var(--ink)}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 90% 12%,#ffd9e8 0,transparent 34%),linear-gradient(135deg,#fff2f7 0%,#fff9fb 56%,#fce7f0 100%);padding:76px 24px 67px}
+    .hero:after{content:"♡";position:absolute;right:8%;bottom:-70px;font-size:250px;line-height:1;color:#e950880c;transform:rotate(-15deg);pointer-events:none}
+    .hero-inner{max-width:1200px;margin:auto;position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:50px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #f7d2e1;color:var(--pink-dark);padding:7px 12px;border-radius:999px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em}
+    .eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#35b77a;box-shadow:0 0 0 4px #35b77a1c}
+    h1,h2,h3,p{margin-top:0}
+    h1{font:700 clamp(2.6rem,5vw,4.6rem)/1.08 "Playfair Display",serif;letter-spacing:-.04em;margin:20px 0}
+    h1 em{color:var(--pink);font-style:normal}
+    .hero-copy{font-size:1.08rem;max-width:560px;color:var(--muted);margin-bottom:26px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn-outline{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border:1px solid #e7b7cb;border-radius:999px;font-weight:700;background:#ffffffab}
+    .hero-note{margin-top:22px;color:#856b79;font-size:.86rem}
+    .hero-art{min-height:340px;display:grid;place-items:center;position:relative}
+    .hero-image{width:min(100%,440px);height:370px;object-fit:cover;border-radius:48% 48% 25px 25px;box-shadow:0 28px 60px #bd2d6827;border:8px solid #ffffffa6}
+    .floating-note{position:absolute;background:#fff;padding:13px 16px;border-radius:18px;box-shadow:var(--shadow);font-size:.85rem;font-weight:700}
+    .floating-note small{display:block;color:var(--muted);font-weight:500}
+    .note-one{left:-8px;top:38px}.note-two{right:-4px;bottom:35px}
+    .trust-bar{background:#fff;border-bottom:1px solid var(--line)}
+    .trust-inner{max-width:1200px;margin:auto;padding:20px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+    .trust-item{font-size:.9rem;color:var(--muted)}.trust-item strong{display:block;color:var(--ink);font-size:1rem}
+    section{scroll-margin-top:90px}
+    .section{max-width:1200px;margin:auto;padding:76px 24px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}
+    .section-kicker{color:var(--pink-dark);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:8px}
+    h2{font:700 clamp(2rem,3.5vw,3rem)/1.15 "Playfair Display",serif;letter-spacing:-.03em;margin-bottom:10px}
+    .section-desc{color:var(--muted);max-width:620px;margin-bottom:0}
+    .search-wrap{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:999px;min-width:min(300px,100%);box-shadow:0 4px 18px #9d47600b}
+    .search-wrap svg{width:18px;color:#9a8290;flex-shrink:0}
+    .search-wrap input{border:0;outline:0;min-width:0;width:100%;background:transparent}
+    .filters{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0 28px}
+    .filter-btn{border:1px solid var(--line);background:#fff;padding:8px 14px;border-radius:999px;color:#735d68;cursor:pointer}
+    .filter-btn.active,.filter-btn:hover{background:#ffe3ee;border-color:#f6b5ce;color:var(--pink-dark)}
+    .profile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:23px}
+    .profile-card{background:#fff;border:1px solid #f3e0e8;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;min-width:0}
+    .profile-card:hover{transform:translateY(-5px);box-shadow:0 22px 48px #9d47601c}
+    .photo-wrap{height:255px;position:relative;background:#f7e1ea;overflow:hidden}
+    .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+    .profile-card:hover .photo-wrap img{transform:scale(1.04)}
+    .status{position:absolute;left:13px;top:13px;background:#fffefaed;padding:6px 10px;border-radius:999px;font-size:.73rem;font-weight:700;color:#4d3a44;display:flex;align-items:center;gap:6px}
+    .status:before{content:"";height:7px;width:7px;border-radius:50%;background:#30b979}
+    .like{position:absolute;right:13px;top:13px;border:0;background:#fffefaed;border-radius:50%;width:36px;height:36px;display:grid;place-items:center;color:var(--pink-dark);font-size:1.1rem}
+    .profile-body{padding:19px}
+    .name-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .name-row h3{font-size:1.16rem;margin:0 0 3px}
+    .age{font-size:.82rem;color:var(--muted);font-weight:500}
+    .tag{font-size:.7rem;font-weight:700;border-radius:7px;background:#fff0f6;color:#bd2d68;padding:4px 8px;white-space:nowrap}
+    .location{color:#8a7581;font-size:.84rem;display:flex;align-items:center;gap:6px;margin:9px 0}
+    .bio{font-size:.9rem;color:#75636d;min-height:48px;margin-bottom:14px}
+    .specialties{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
+    .specialties span{border:1px solid #f1e3e9;border-radius:8px;padding:4px 8px;color:#775e6a;font-size:.74rem}
+    .card-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .contact-btn{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 8px;border-radius:12px;font-size:.83rem;font-weight:700;transition:.2s}
+    .contact-btn svg{width:17px;height:17px;flex-shrink:0}
+    .wa-btn{background:#e6f8ee;color:#167548}.wa-btn:hover{background:#cef1dc}
+    .call-btn{background:#ffe8f1;color:#b72b67}.call-btn:hover{background:#ffd7e6}
+    .contact-btn:focus-visible,.nav-cta:focus-visible,.btn-primary:focus-visible,.btn-outline:focus-visible,.filter-btn:focus-visible{outline:3px solid #9c3670;outline-offset:3px}
+    .empty-state{display:none;padding:36px;text-align:center;border:1px dashed #e7b9cc;border-radius:20px;color:var(--muted);background:#fff}
+    .how{background:linear-gradient(180deg,#fff5f9,#fffafb)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+    .step{background:#fff;border:1px solid var(--line);padding:26px;border-radius:22px}
+    .step-icon{height:48px;width:48px;display:grid;place-items:center;background:#ffe5ef;border-radius:15px;color:var(--pink-dark);font-size:1.35rem;margin-bottom:18px}
+    .step h3{font-size:1.08rem;margin-bottom:8px}.step p{font-size:.9rem;color:var(--muted);margin-bottom:0}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:center}
+    .about-image{width:100%;height:380px;object-fit:cover;border-radius:30px;box-shadow:var(--shadow)}
+    .check-list{list-style:none;padding:0;margin:25px 0;display:grid;gap:13px}
+    .check-list li{display:flex;gap:11px;color:#6f5965}.check-list li:before{content:"✓";display:grid;place-items:center;flex-shrink:0;background:#e0f6e9;color:#1c8552;height:23px;width:23px;border-radius:50%;font-weight:700;font-size:.8rem}
+    .notice{background:#fff0f6;border:1px solid #f4d4e2;border-radius:16px;padding:16px 18px;color:#795a6a;font-size:.87rem}
+    .faq-list{max-width:850px;margin:30px auto 0;display:grid;gap:12px}
+    details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+    summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:15px}
+    summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--pink);font-size:1.3rem;line-height:1}
+    details[open] summary:after{content:"−"}details p{color:var(--muted);margin:13px 0 0;font-size:.93rem}
+    .bottom-cta{margin:0 24px 70px;background:linear-gradient(120deg,#ef6b9a,#cf3b78);color:white;border-radius:28px;padding:44px 24px;text-align:center;overflow:hidden;position:relative}
+    .bottom-cta h2{color:white}.bottom-cta p{max-width:600px;margin:0 auto 22px;color:#fff0f6}
+    .bottom-cta .btn-outline{border-color:#ffffff9c;background:#fff;color:#b82c68}
+    footer{background:#352530;color:#fff;padding:42px 24px 24px}
+    .footer-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+    .footer-brand{font-size:1.4rem;font-weight:700;margin-bottom:12px}.footer-brand span{color:#f58bb4}
+    footer p,footer a{color:#d6c2cd;font-size:.88rem}footer h3{font-size:.93rem;margin-bottom:12px;color:#fff}footer .footer-links{display:grid;gap:8px}
+    .copyright{max-width:1200px;margin:26px auto 0;border-top:1px solid #604957;padding-top:18px;color:#bfaab7;font-size:.8rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .disclaimer{color:#a8909f;font-size:.77rem;margin-top:12px;max-width:520px}
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr .8fr;gap:20px}.hero-image{height:320px}.profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-wrap{height:270px}.nav-links{gap:15px}.about-grid{gap:30px}}
+    @media(max-width:650px){.nav-inner{padding:13px 18px;gap:12px}.menu-toggle{display:block;margin-left:auto}.nav-cta{display:none}.nav-links{display:none;position:absolute;left:12px;right:12px;top:calc(100% + 6px);padding:16px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 8px}.hero{padding:49px 18px 42px}.hero-inner{grid-template-columns:1fr}.hero-copy{font-size:1rem}.hero-art{min-height:275px;margin-top:12px}.hero-image{height:290px;width:min(90%,360px)}.note-one{left:0;top:16px}.note-two{right:0;bottom:18px}.trust-inner{padding:16px 10px;gap:9px}.trust-item{font-size:.75rem}.trust-item strong{font-size:.86rem}.section{padding:55px 18px}.section-head{align-items:stretch;flex-direction:column}.search-wrap{width:100%}.profile-grid{grid-template-columns:1fr;gap:18px}.photo-wrap{height:310px}.profile-body{padding:18px}.steps{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.about-image{height:280px}.bottom-cta{margin:0 18px 48px;padding:34px 20px}.footer-inner{grid-template-columns:1fr 1fr;gap:25px}.footer-inner>div:first-child{grid-column:1/-1}}
+    @media(max-width:380px){.hero-actions{flex-direction:column;align-items:stretch}.hero-actions a{text-align:center}.photo-wrap{height:270px}.footer-inner{grid-template-columns:1fr}.footer-inner>div:first-child{grid-column:auto}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <div class="top-strip">A little kindness goes a long way · Friendly conversations, on your terms</div>
+  <header class="navbar">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="BlushLine home">blush<span>line</span> ♡</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#about">About</a><a href="#faq">FAQ</a>
+      </div>
+      <a class="nav-cta" href="#profiles">Explore profiles ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Warm voices. Easy conversations.</span>
+          <h1>Your next lovely conversation starts <em>here.</em></h1>
+          <p class="hero-copy">Meet friendly call-desk hosts, discover their interests, and choose a simple way to connect. A little chat, a shared laugh, or a welcome distraction — make it your moment.</p>
+          <div class="hero-actions"><a class="btn-primary" href="#profiles">Meet the hosts&nbsp; ↓</a><a class="btn-outline" href="#how-it-works">How it works</a></div>
+          <p class="hero-note">♡ Respectful conversations · Clear contact choices · Your decision, always</p>
+        </div>
+        <div class="hero-art">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=85" alt="Portrait of a smiling woman" fetchpriority="high">
+          <div class="floating-note note-one">♡ Your kind of connection<small>Choose a profile that fits you</small></div>
+          <div class="floating-note note-two">✦ Simple & friendly<small>Reach out your way</small></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-bar">
+      <div class="trust-inner">
+        <div class="trust-item"><strong>12 unique profiles</strong>Different interests and styles</div>
+        <div class="trust-item"><strong>Pick your contact method</strong>WhatsApp or phone call</div>
+        <div class="trust-item"><strong>Always your choice</strong>Connect only when comfortable</div>
+      </div>
+    </div>
+
+    <section class="section" id="profiles">
+      <div class="section-head">
+        <div><div class="section-kicker">Meet the team</div><h2>Find your kind of vibe</h2><p class="section-desc">Every host has a different personality. Browse the profiles, learn a little about each one, and choose who you'd like to contact.</p></div>
+        <label class="search-wrap" aria-label="Search profiles">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="profileSearch" type="search" placeholder="Search names or interests…" autocomplete="off">
+        </label>
+      </div>
+      <div class="filters" role="group" aria-label="Filter profiles by interest">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All profiles</button>
+        <button class="filter-btn" data-filter="music" aria-pressed="false">Music lovers</button>
+        <button class="filter-btn" data-filter="travel" aria-pressed="false">Travel & stories</button>
+        <button class="filter-btn" data-filter="wellness" aria-pressed="false">Wellness</button>
+        <button class="filter-btn" data-filter="fun" aria-pressed="false">Fun & laughter</button>
+      </div>
+      <div class="profile-grid" id="profileGrid">
+        <article class="profile-card" data-name="Aanya" data-interests="music fun">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Aanya smiling portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Aanya <span class="age">· 24</span></h3></div><span class="tag">The Cheerful One</span></div><div class="location">⌖ Jaipur, Rajasthan</div><p class="bio">A sunshine personality who enjoys good music, light-hearted chats, and swapping feel-good recommendations.</p><div class="specialties"><span>Bollywood</span><span>Playlists</span><span>Daily life</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000001?text=Hi%20Aanya%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Aanya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000001" aria-label="Call Aanya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Meera" data-interests="travel wellness">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80" alt="Meera portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Meera <span class="age">· 26</span></h3></div><span class="tag">The Storyteller</span></div><div class="location">⌖ Udaipur, Rajasthan</div><p class="bio">A curious traveller with a camera roll full of sunsets and a knack for turning small moments into stories.</p><div class="specialties"><span>Travel</span><span>Food spots</span><span>Photography</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000002?text=Hi%20Meera%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Meera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000002" aria-label="Call Meera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Kiara" data-interests="fun music">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=700&q=80" alt="Kiara smiling portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Kiara <span class="age">· 23</span></h3></div><span class="tag">The Music Buff</span></div><div class="location">⌖ Jaipur, Rajasthan</div><p class="bio">From indie favourites to throwback hits, Kiara loves swapping songs and talking about the stories behind them.</p><div class="specialties"><span>Indie pop</span><span>Movies</span><span>Trivia</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000003?text=Hi%20Kiara%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kiara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000003" aria-label="Call Kiara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Riya" data-interests="wellness travel">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80" alt="Riya portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Riya <span class="age">· 25</span></h3></div><span class="tag">The Calm Soul</span></div><div class="location">⌖ Ajmer, Rajasthan</div><p class="bio">Enjoys mindful routines, relaxed conversations, and sharing small ideas for making a busy day feel lighter.</p><div class="specialties"><span>Mindfulness</span><span>Books</span><span>Nature</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000004?text=Hi%20Riya%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Riya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000004" aria-label="Call Riya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Sana" data-interests="music travel">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=700&q=80" alt="Sana portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Sana <span class="age">· 27</span></h3></div><span class="tag">The Explorer</span></div><div class="location">⌖ Jodhpur, Rajasthan</div><p class="bio">A big fan of colourful markets, weekend getaways, and learning a little something new from everyone she meets.</p><div class="specialties"><span>Weekend trips</span><span>Culture</span><span>Music</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000005?text=Hi%20Sana%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Sana"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000005" aria-label="Call Sana"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Tara" data-interests="fun wellness">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1508216756425-1a3f1e1f2e5e?auto=format&fit=crop&w=700&q=80" alt="Tara smiling portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Tara <span class="age">· 24</span></h3></div><span class="tag">The Optimist</span></div><div class="location">⌖ Kota, Rajasthan</div><p class="bio">Tara brings upbeat energy, silly quizzes, and a love of finding the bright side of ordinary things.</p><div class="specialties"><span>Quick quizzes</span><span>Comedy</span><span>Motivation</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000006?text=Hi%20Tara%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Tara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000006" aria-label="Call Tara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Naina" data-interests="music wellness">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1526510747491-58f928ec870f?auto=format&fit=crop&w=700&q=80" alt="Naina portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Naina <span class="age">· 28</span></h3></div><span class="tag">The Bookworm</span></div><div class="location">⌖ Jaipur, Rajasthan</div><p class="bio">Loves page-turners, thoughtful questions, and chats that wander from favourite characters to everyday ideas.</p><div class="specialties"><span>Fiction</span><span>Podcasts</span><span>Slow mornings</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000007?text=Hi%20Naina%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Naina"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000007" aria-label="Call Naina"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Ishita" data-interests="travel fun">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80" alt="Ishita portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Ishita <span class="age">· 25</span></h3></div><span class="tag">The Foodie</span></div><div class="location">⌖ Bikaner, Rajasthan</div><p class="bio">Always collecting café suggestions, easy recipes, and stories about the best meal someone has ever had.</p><div class="specialties"><span>Street food</span><span>Cafés</span><span>Recipes</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000008?text=Hi%20Ishita%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Ishita"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000008" aria-label="Call Ishita"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Pooja" data-interests="wellness fun">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=700&q=80" alt="Pooja smiling portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Pooja <span class="age">· 26</span></h3></div><span class="tag">The Creative</span></div><div class="location">⌖ Sikar, Rajasthan</div><p class="bio">Enjoys handmade projects, trying new hobbies, and helping others find a creative spark for their week.</p><div class="specialties"><span>Art</span><span>DIY</span><span>Hobbies</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000009?text=Hi%20Pooja%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Pooja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000009" aria-label="Call Pooja"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Anika" data-interests="travel wellness">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=80" alt="Anika portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Anika <span class="age">· 24</span></h3></div><span class="tag">The Nature Lover</span></div><div class="location">⌖ Pushkar, Rajasthan</div><p class="bio">Finds joy in open skies, quiet walks, mindful living, and sharing favourite places to unwind.</p><div class="specialties"><span>Nature</span><span>Wellbeing</span><span>Getaways</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000010?text=Hi%20Anika%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Anika"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000010" aria-label="Call Anika"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Myra" data-interests="music fun">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80" alt="Myra portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Myra <span class="age">· 27</span></h3></div><span class="tag">The Movie Fan</span></div><div class="location">⌖ Alwar, Rajasthan</div><p class="bio">A movie-night enthusiast who loves plot twists, comfort films, and debating which soundtrack deserves an award.</p><div class="specialties"><span>Films</span><span>Soundtracks</span><span>Pop culture</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000011?text=Hi%20Myra%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Myra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000011" aria-label="Call Myra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+        <article class="profile-card" data-name="Zoya" data-interests="travel fun">
+          <div class="photo-wrap"><img loading="lazy" src="https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=700&q=80" alt="Zoya smiling portrait"><span class="status">Available to connect</span><span class="like" aria-hidden="true">♡</span></div>
+          <div class="profile-body"><div class="name-row"><div><h3>Zoya <span class="age">· 23</span></h3></div><span class="tag">The Free Spirit</span></div><div class="location">⌖ Mount Abu, Rajasthan</div><p class="bio">Likes spontaneous plans, fresh perspectives, and conversations that can jump from local adventures to big dreams.</p><div class="specialties"><span>Adventure</span><span>Culture</span><span>Dreams</span></div><div class="card-actions"><a class="contact-btn wa-btn" href="https://wa.me/910000000012?text=Hi%20Zoya%2C%20I%20saw%20your%20BlushLine%20profile." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Zoya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"/><path d="M8 8.5c.6 2.4 2.1 3.9 4.5 4.7l1.1-1.1 2 .9-.2 1.5c-4 .8-8.7-3.9-7.9-7.9L9 6.4l.9 2Z"/></svg> WhatsApp</a><a class="contact-btn call-btn" href="tel:+910000000012" aria-label="Call Zoya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4c0 1-1 2-2 2C9 20 4 15 3 6c0-1 1-2 2-2Z"/></svg> Call</a></div></div>
+        </article>
+      </div>
+      <div class="empty-state" id="emptyState">No profiles match that search. Try a different name or interest.</div>
+      <p class="hero-note" style="text-align:center;margin-top:28px">Demo directory: profile names, images, and contact numbers are placeholders. Replace them with verified details before publishing.</p>
+    </section>
+
+    <section class="how" id="how-it-works">
+      <div class="section">
+        <div class="section-head"><div><div class="section-kicker">Simple by design</div><h2>Three easy steps</h2><p class="section-desc">A straightforward way to find a host whose interests match your mood.</p></div></div>
+        <div class="steps">
+          <article class="step"><div class="step-icon">♡</div><h3>01. Explore profiles</h3><p>Read each short introduction and look at the interests, personality notes, and location listed on the card.</p></article>
+          <article class="step"><div class="step-icon">⌕</div><h3>02. Choose your way</h3><p>Use the WhatsApp button to start a message or the call button to open your device's phone app.</p></article>
+          <article class="step"><div class="step-icon">✦</div><h3>03. Keep it respectful</h3><p>Say hello, share what you would like to chat about, and respect each person's boundaries and availability.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about-grid">
+        <img class="about-image" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85" alt="People enjoying a friendly conversation" loading="lazy">
+        <div><div class="section-kicker">A softer way to connect</div><h2>Good conversations begin with respect.</h2><p class="section-desc">BlushLine is a concept for a friendly profile directory: clear introductions, straightforward contact choices, and space to choose the kind of conversation that suits you.</p>
+          <ul class="check-list"><li>Browse individual interests before reaching out.</li><li>Start with a message if you prefer not to call right away.</li><li>Keep personal information private until you feel comfortable.</li><li>Be thoughtful: accept a no, and expect the same courtesy.</li></ul>
+          <div class="notice"><strong>Before launch:</strong> This is a static demo. The listed contact numbers are dummy examples and are not verified or connected to real hosts. Replace them with consenting hosts' actual details and review privacy, age, and consent requirements before making the page public.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" style="padding-top:15px">
+      <div style="text-align:center"><div class="section-kicker">Need to know</div><h2>Frequently asked questions</h2><p class="section-desc" style="margin:0 auto">A few quick answers before you reach out.</p></div>
+      <div class="faq-list">
+        <details><summary>How do the contact buttons work?</summary><p>WhatsApp opens a new chat with a pre-filled greeting, while Call opens the phone dialler on compatible devices. The demo numbers must be replaced before live use.</p></details>
+        <details><summary>Are the profiles and contact details real?</summary><p>No. This static sample uses placeholder profile copy, stock portrait photos, and dummy contact numbers for design demonstration. It does not verify identity or availability.</p></details>
+        <details><summary>Can I find profiles by interest?</summary><p>Yes. Use the filter chips to narrow the cards by interest, or type a name or interest into the search field.</p></details>
+        <details><summary>Is this website taking bookings or payments?</summary><p>No. This is a front-end-only static page. It has no account system, payment flow, booking engine, or backend to store messages.</p></details>
+      </div>
+    </section>
+
+    <section class="bottom-cta">
+      <h2>A friendly hello can brighten the day.</h2>
+      <p>Browse the profiles, find a conversation style that suits you, and choose how you'd like to say hello.</p>
+      <a class="btn-outline" href="#profiles">Browse all 12 profiles&nbsp; ↑</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-brand">blush<span>line</span> ♡</div><p>A pink-themed static profile directory concept built around approachable introductions and simple contact choices.</p><div class="disclaimer">Demo only. Names, photos, descriptions, availability labels, and numbers are placeholders. No affiliation or real-person endorsement is implied.</div></div>
+      <div><h3>Explore</h3><div class="footer-links"><a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#about">About us</a></div></div>
+      <div><h3>Helpful</h3><div class="footer-links"><a href="#faq">Frequently asked questions</a><a href="#about">Privacy & respect</a><a href="#profiles">Contact options</a></div></div>
+    </div>
+    <div class="copyright"><span>© <span id="year"></span> BlushLine. Demo concept.</span><span>Made with ♡ and a little blush.</span></div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    const searchInput = document.getElementById('profileSearch');
+    const filterButtons = [...document.querySelectorAll('.filter-btn')];
+    const cards = [...document.querySelectorAll('.profile-card')];
+    const emptyState = document.getElementById('emptyState');
+    let activeFilter = 'all';
+    function updateProfiles() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const matchesQuery = (card.dataset.name + ' ' + card.innerText).toLowerCase().includes(query);
+        const interests = card.dataset.interests.split(' ');
+        const matchesFilter = activeFilter === 'all' || interests.includes(activeFilter);
+        const show = matchesQuery && matchesFilter;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      emptyState.style.display = visible ? 'none' : 'block';
+    }
+    searchInput.addEventListener('input', updateProfiles);
+    filterButtons.forEach(button => button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter;
+      filterButtons.forEach(item => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      updateProfiles();
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
