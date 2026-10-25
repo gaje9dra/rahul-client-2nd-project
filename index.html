@@ -125,6 +125,35 @@
     .keyword-tag:hover{transform:translateY(-2px);border-color:#e99cbb;box-shadow:0 9px 20px #bd2d6817;background:#fff}
     .keyword-tag:focus-visible{outline:3px solid #9c3670;outline-offset:3px}
     .keyword-note{font-size:.78rem;color:#967c8a;margin:22px auto 0;max-width:760px}
+    .keyword-section{background:linear-gradient(180deg,#fff8fb 0%,#fff0f6 100%);border-top:1px solid #f5dce7;border-bottom:1px solid #f5dce7}
+    .keyword-inner{max-width:1200px;margin:auto;padding:66px 24px 72px;text-align:center}
+    .keyword-heading{font:700 clamp(1.55rem,3vw,2.2rem)/1.25 "Playfair Display",serif;color:var(--pink-dark);margin:0 auto 12px;letter-spacing:-.025em}
+    .keyword-intro{max-width:720px;margin:0 auto 28px;color:var(--muted);font-size:.96rem}
+    .keyword-tags{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px}
+    .keyword-tag{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid #f1cada;border-radius:999px;background:linear-gradient(135deg,#fff,#ffe8f1);color:#a92e61;font-size:.83rem;font-weight:700;box-shadow:0 5px 14px #bd2d680d;transition:transform .2s,box-shadow .2s,border-color .2s}
+    .keyword-tag:before{content:"♡";font-size:1rem;color:var(--pink)}
+    .keyword-tag:hover{transform:translateY(-2px);border-color:#e99cbb;box-shadow:0 9px 20px #bd2d6817;background:#fff}
+    .keyword-tag:focus-visible{outline:3px solid #9c3670;outline-offset:3px}
+    .keyword-note{font-size:.78rem;color:#967c8a;margin:22px auto 0;max-width:760px}
+
+    .jaipur-map-section{background:linear-gradient(180deg,#fffafb 0%,#fff0f6 100%);border-top:1px solid #f5dce7}
+    .jaipur-map-inner{max-width:1200px;margin:auto;padding:64px 24px 72px}
+    .map-heading{text-align:center;margin-bottom:25px}
+    .map-frame{position:relative;width:100%;height:clamp(340px,48vw,540px);overflow:hidden;border:1px solid #f0cfde;border-radius:24px;background:#f2eee7;box-shadow:0 18px 42px #9d476019}
+    .map-frame iframe{width:100%;height:100%;border:0;display:block}
+    .map-open{position:absolute;left:14px;top:14px;z-index:2;display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--pink-dark);border:1px solid #f3d6e3;border-radius:10px;padding:10px 14px;font-size:.84rem;font-weight:700;box-shadow:0 4px 14px #4324331a}
+    .map-open:hover{background:#fff2f7}
+    .map-caption{font-size:.82rem;color:var(--muted);text-align:center;margin:16px auto 0;max-width:760px}
+    @media(max-width:650px){.jaipur-map-inner{padding:50px 18px 56px}.map-frame{height:390px;border-radius:18px}.map-open{left:10px;top:10px;padding:9px 11px}}
+    .jaipur-map-section{background:linear-gradient(180deg,#fffafb 0%,#fff0f6 100%);border-top:1px solid #f5dce7}
+    .jaipur-map-inner{max-width:1200px;margin:auto;padding:64px 24px 72px}
+    .map-heading{text-align:center;margin-bottom:25px}
+    .map-frame{position:relative;width:100%;height:clamp(340px,48vw,540px);overflow:hidden;border:1px solid #f0cfde;border-radius:24px;background:#f2eee7;box-shadow:0 18px 42px #9d476019}
+    .map-frame iframe{width:100%;height:100%;border:0;display:block}
+    .map-open{position:absolute;left:14px;top:14px;z-index:2;display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--pink-dark);border:1px solid #f3d6e3;border-radius:10px;padding:10px 14px;font-size:.84rem;font-weight:700;box-shadow:0 4px 14px #4324331a}
+    .map-open:hover{background:#fff2f7}
+    .map-caption{font-size:.82rem;color:var(--muted);text-align:center;margin:16px auto 0;max-width:760px}
+    @media(max-width:650px){.jaipur-map-inner{padding:50px 18px 56px}.map-frame{height:390px;border-radius:18px}.map-open{left:10px;top:10px;padding:9px 11px}}
     @media(max-width:900px){.hero-inner{grid-template-columns:1fr .8fr;gap:20px}.hero-image{height:320px}.profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-wrap{height:270px}.nav-links{gap:15px}.about-grid{gap:30px}}
     @media(max-width:650px){.nav-inner{padding:13px 18px;gap:12px}.menu-toggle{display:block;margin-left:auto}.nav-cta{display:none}.nav-links{display:none;position:absolute;left:12px;right:12px;top:calc(100% + 6px);padding:16px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 8px}.hero{padding:49px 18px 42px}.hero-inner{grid-template-columns:1fr}.hero-copy{font-size:1rem}.hero-art{min-height:275px;margin-top:12px}.hero-image{height:290px;width:min(90%,360px)}.note-one{left:0;top:16px}.note-two{right:0;bottom:18px}.trust-inner{padding:16px 10px;gap:9px}.trust-item{font-size:.75rem}.trust-item strong{font-size:.86rem}.section{padding:55px 18px}.section-head{align-items:stretch;flex-direction:column}.search-wrap{width:100%}.profile-grid{grid-template-columns:1fr;gap:18px}.photo-wrap{height:310px}.profile-body{padding:18px}.steps{grid-template-columns:1fr}.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{grid-template-columns:1fr}.about-image{height:280px}.bottom-cta{margin:0 18px 48px;padding:34px 20px}.footer-inner{grid-template-columns:1fr 1fr;gap:25px}.footer-inner>div:first-child{grid-column:1/-1}}
     @media(max-width:430px){.why-grid{grid-template-columns:1fr}}\n    @media(max-width:380px){.hero-actions{flex-direction:column;align-items:stretch}.hero-actions a{text-align:center}.photo-wrap{height:270px}.footer-inner{grid-template-columns:1fr}.footer-inner>div:first-child{grid-column:auto}}
@@ -298,34 +327,70 @@
     </section>
 
 
+    
+
     <section class="keyword-section" id="popular-searches" aria-labelledby="keyword-heading">
       <div class="keyword-inner">
         <div class="section-kicker">Find your kind of connection</div>
-        <h2 class="keyword-heading" id="keyword-heading">Popular Jaipur Dating &amp; Date-Idea Searches</h2>
-        <p class="keyword-intro">Explore interests, neighbourhoods, and date ideas. Choose a tag to search the sample profiles or jump to ideas for meeting up.</p>
-        <div class="keyword-tags" aria-label="Popular dating and date idea keywords">
-          <a class="keyword-tag" href="#profiles" data-keyword="music">Music lovers in Jaipur</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="travel">Travel &amp; adventure</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="wellness">Wellness &amp; mindful dates</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="fun">Fun and laughter</a>
-          <a class="keyword-tag" href="#date-ideas">Café date ideas</a>
-          <a class="keyword-tag" href="#date-ideas">Coffee dates in Jaipur</a>
-          <a class="keyword-tag" href="#date-ideas">Dinner and dessert dates</a>
-          <a class="keyword-tag" href="#date-ideas">Bookshop meetups</a>
-          <a class="keyword-tag" href="#date-ideas">Art and creative activities</a>
-          <a class="keyword-tag" href="#date-ideas">Outdoor daytime dates</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="C-Scheme">C-Scheme connections</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="Vaishali Nagar">Vaishali Nagar connections</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="Malviya Nagar">Malviya Nagar connections</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="Mansarovar">Mansarovar connections</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="Raja Park">Raja Park connections</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="Civil Lines">Civil Lines connections</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="Jhotwara">Jhotwara connections</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="food">Foodie conversations</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="films">Movies and pop culture</a>
-          <a class="keyword-tag" href="#profiles" data-keyword="nature">Nature and garden walks</a>
+        <h2 class="keyword-heading" id="keyword-heading">Popular Jaipur Search Keywords</h2>
+        <p class="keyword-intro">Explore popular Jaipur search terms below. These tags are displayed for keyword navigation only; this demo does not verify service providers or availability.</p>
+        <div class="keyword-tags" aria-label="Popular Jaipur search keywords">
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: jaipur call girls">jaipur call girls</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: call girls in jaipur">call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: jaipur call girl number">jaipur call girl number</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: call girl in jaipur">call girl in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: call girl service in jaipur">call girl service in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: jaipur call girl service">jaipur call girl service</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: independent call girls in jaipur">independent call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: malviya nagar call girls">malviya nagar call girls</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: mansarovar call girls jaipur">mansarovar call girls jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: vaishali nagar call girls">vaishali nagar call girls</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: c scheme call girls jaipur">c scheme call girls jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: jagatpura call girls jaipur">jagatpura call girls jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: raja park call girls jaipur">raja park call girls jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: tonk road call girls jaipur">tonk road call girls jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: civil lines call girls jaipur">civil lines call girls jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: russian call girls in jaipur">russian call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: cheap call girls in jaipur">cheap call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: college girl call girls in jaipur">college girl call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: housewife call girls in jaipur">housewife call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: model call girls in jaipur">model call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: vip call girls in jaipur">vip call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: high profile call girls jaipur">high profile call girls jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: 5 star hotel call girl service jaipur">5 star hotel call girl service jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: jaipur airport call girl service">jaipur airport call girl service</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: jaipur junction call girls">jaipur junction call girls</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: jaipur sakshi escort call girl">jaipur sakshi escort call girl</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: jaipur call girls locanto">jaipur call girls locanto</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: female call girls in jaipur">female call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: call girl service near me jaipur">call girl service near me jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: jaipur independent call girls">jaipur independent call girls</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: royal call girls in jaipur">royal call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: foreign call girls in jaipur">foreign call girls in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: 24x7 jaipur call girls">24x7 jaipur call girls</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: best call girl agency in jaipur">best call girl agency in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: hotel visit call girl in jaipur">hotel visit call girl in jaipur</a>
+          <a class="keyword-tag" href="#profiles" aria-label="Search keyword: in-call out-call call girls jaipur">in-call out-call call girls jaipur</a>
         </div>
-        <p class="keyword-note">These are navigation shortcuts for this demo—not claims of live member availability or verified profiles.</p>
+        <p class="keyword-note">Keyword labels are user-supplied search phrases, not verified listings, endorsements, or claims of availability.</p>
+      </div>
+    </section>
+
+
+    
+
+    <section class="jaipur-map-section" id="jaipur-map" aria-labelledby="jaipur-map-heading">
+      <div class="jaipur-map-inner">
+        <div class="map-heading">
+          <div class="section-kicker">Explore the Pink City</div>
+          <h2 id="jaipur-map-heading">Find Your Way Around Jaipur</h2>
+          <p class="section-desc" style="margin:0 auto">Explore Jaipur and its neighbourhoods on the map while planning a comfortable, public place to meet.</p>
+        </div>
+        <div class="map-frame">
+          <a class="map-open" href="https://www.google.com/maps/search/?api=1&amp;query=Jaipur%2C%20Rajasthan%2C%20India" target="_blank" rel="noopener noreferrer">Open in Maps ↗</a>
+          <iframe title="Map of Jaipur, Rajasthan" src="https://maps.google.com/maps?q=Jaipur%2C%20Rajasthan%2C%20India&amp;z=11&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <p class="map-caption">This map shows Jaipur generally; profile locality labels are demo placeholders and do not identify anyone’s live location. For first meetups, choose a public venue and agree on the details together.</p>
       </div>
     </section>
 
