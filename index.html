@@ -125,6 +125,16 @@
     .keyword-tag:hover{transform:translateY(-2px);border-color:#e99cbb;box-shadow:0 9px 20px #bd2d6817;background:#fff}
     .keyword-tag:focus-visible{outline:3px solid #9c3670;outline-offset:3px}
     .keyword-note{font-size:.78rem;color:#967c8a;margin:22px auto 0;max-width:760px}
+
+    .jaipur-map-section{background:linear-gradient(180deg,#fffafb 0%,#fff0f6 100%);border-top:1px solid #f5dce7}
+    .jaipur-map-inner{max-width:1200px;margin:auto;padding:64px 24px 72px}
+    .map-heading{text-align:center;margin-bottom:25px}
+    .map-frame{position:relative;width:100%;height:clamp(340px,48vw,540px);overflow:hidden;border:1px solid #f0cfde;border-radius:24px;background:#f2eee7;box-shadow:0 18px 42px #9d476019}
+    .map-frame iframe{width:100%;height:100%;border:0;display:block}
+    .map-open{position:absolute;left:14px;top:14px;z-index:2;display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--pink-dark);border:1px solid #f3d6e3;border-radius:10px;padding:10px 14px;font-size:.84rem;font-weight:700;box-shadow:0 4px 14px #4324331a}
+    .map-open:hover{background:#fff2f7}
+    .map-caption{font-size:.82rem;color:var(--muted);text-align:center;margin:16px auto 0;max-width:760px}
+    @media(max-width:650px){.jaipur-map-inner{padding:50px 18px 56px}.map-frame{height:390px;border-radius:18px}.map-open{left:10px;top:10px;padding:9px 11px}}
     @media(max-width:900px){.hero-inner{grid-template-columns:1fr .8fr;gap:20px}.hero-image{height:320px}.profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-wrap{height:270px}.nav-links{gap:15px}.about-grid{gap:30px}}
     @media(max-width:650px){.nav-inner{padding:13px 18px;gap:12px}.menu-toggle{display:block;margin-left:auto}.nav-cta{display:none}.nav-links{display:none;position:absolute;left:12px;right:12px;top:calc(100% + 6px);padding:16px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 8px}.hero{padding:49px 18px 42px}.hero-inner{grid-template-columns:1fr}.hero-copy{font-size:1rem}.hero-art{min-height:275px;margin-top:12px}.hero-image{height:290px;width:min(90%,360px)}.note-one{left:0;top:16px}.note-two{right:0;bottom:18px}.trust-inner{padding:16px 10px;gap:9px}.trust-item{font-size:.75rem}.trust-item strong{font-size:.86rem}.section{padding:55px 18px}.section-head{align-items:stretch;flex-direction:column}.search-wrap{width:100%}.profile-grid{grid-template-columns:1fr;gap:18px}.photo-wrap{height:310px}.profile-body{padding:18px}.steps{grid-template-columns:1fr}.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{grid-template-columns:1fr}.about-image{height:280px}.bottom-cta{margin:0 18px 48px;padding:34px 20px}.footer-inner{grid-template-columns:1fr 1fr;gap:25px}.footer-inner>div:first-child{grid-column:1/-1}}
     @media(max-width:430px){.why-grid{grid-template-columns:1fr}}\n    @media(max-width:380px){.hero-actions{flex-direction:column;align-items:stretch}.hero-actions a{text-align:center}.photo-wrap{height:270px}.footer-inner{grid-template-columns:1fr}.footer-inner>div:first-child{grid-column:auto}}
@@ -138,7 +148,7 @@
       <a class="brand" href="#home" aria-label="BlushLine home">blush<span>line</span> ♡</a>
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
       <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#about">About</a><a href="#date-ideas">Date ideas</a><a href="#why-choose-us">Why choose us</a><a href="#popular-searches">Popular searches</a><a href="#faq">FAQ</a>
+        <a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#about">About</a><a href="#date-ideas">Date ideas</a><a href="#why-choose-us">Why choose us</a><a href="#popular-searches">Popular searches</a><a href="#jaipur-map">Jaipur map</a><a href="#faq">FAQ</a>
       </div>
       <a class="nav-cta" href="#profiles">Explore profiles ↗</a>
     </nav>
@@ -345,6 +355,22 @@
       </div>
     </section>
 
+
+    <section class="jaipur-map-section" id="jaipur-map" aria-labelledby="jaipur-map-heading">
+      <div class="jaipur-map-inner">
+        <div class="map-heading">
+          <div class="section-kicker">Explore the Pink City</div>
+          <h2 id="jaipur-map-heading">Find Your Way Around Jaipur</h2>
+          <p class="section-desc" style="margin:0 auto">Explore Jaipur and its neighbourhoods on the map while planning a comfortable, public place to meet.</p>
+        </div>
+        <div class="map-frame">
+          <a class="map-open" href="https://www.google.com/maps/search/?api=1&amp;query=Jaipur%2C%20Rajasthan%2C%20India" target="_blank" rel="noopener noreferrer">Open in Maps ↗</a>
+          <iframe title="Map of Jaipur, Rajasthan" src="https://maps.google.com/maps?q=Jaipur%2C%20Rajasthan%2C%20India&amp;z=11&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <p class="map-caption">This map shows Jaipur generally; profile locality labels are demo placeholders and do not identify anyone’s live location. For first meetups, choose a public venue and agree on the details together.</p>
+      </div>
+    </section>
+
     <section class="bottom-cta">
       <h2>Meet someone new. Make a memory.</h2>
       <p>Find someone who shares your vibe, start a conversation, and plan a first date that feels natural to both of you.</p>
@@ -355,7 +381,7 @@
   <footer>
     <div class="footer-inner">
       <div><div class="footer-brand">blush<span>line</span> ♡</div><p>A pink-themed dating directory concept for adults who want to meet, connect, and enjoy real-life dates together.</p><div class="disclaimer">Demo only. Names, photos, bios, and numbers are placeholders. Meet in public for first dates, respect consent, and verify details before publishing.</div></div>
-      <div><h3>Explore</h3><div class="footer-links"><a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#date-ideas">Date ideas</a><a href="#about">About us</a><a href="#why-choose-us">Why choose us</a><a href="#popular-searches">Popular searches</a></div></div>
+      <div><h3>Explore</h3><div class="footer-links"><a href="#home">Home</a><a href="#profiles">Profiles</a><a href="#how-it-works">How it works</a><a href="#date-ideas">Date ideas</a><a href="#about">About us</a><a href="#why-choose-us">Why choose us</a><a href="#popular-searches">Popular searches</a><a href="#jaipur-map">Jaipur map</a></div></div>
       <div><h3>Helpful</h3><div class="footer-links"><a href="#faq">Dating FAQs</a><a href="#about">Privacy & respect</a><a href="#profiles">Contact options</a></div></div>
     </div>
     <div class="copyright"><span>© <span id="year"></span> BlushLine. Demo concept.</span><span>Made with ♡ and a little blush.</span></div>
